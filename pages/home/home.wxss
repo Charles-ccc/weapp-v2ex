@@ -1,0 +1,15 @@
+/* pages/home/home.wxss */
+.home-container{
+  width: 100%;
+  box-sizing: border-box;
+}
+.avatar{
+  width: 48rpx;
+  height: 48rpx;
+}
+.avatar image {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 4rpx;
+  display: block;
+}
