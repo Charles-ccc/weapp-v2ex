@@ -1,23 +1,7 @@
-<!--pages/home/home.wxml-->
-<!-- <import src="../header/header.wxml" />
-<template is="header"></template> -->
-<view class='home-container'>
-  <block wx:for='{{hotData}}' wx:for-item="item" wx:key="unique">
-    <view class='avatar'>
-      <image src="{{item.member.avatar_normal}}"></image>
+<import src="home-template/home-template.wxml" />
+<block  wx:for='{{hotData}}' wx:for-item="item" wx:key="unique">
+    <view class='home-container'>
+        <template is="home-template" data="{{...item}}"></template>
     </view>
-    <view class='middle'>
-      <view class='fade'>
-        <text class='node'>{{item.node.title}}</text>
-          •  
-        <text class='user-name'>{{item.member.username}}</text>
-      </view>
-      <view class='info-title'>{{item.title}}</view>
-      <view class='reply'>
-        <text class='ptime'>{{item.last_modified}}</text>
-          •  最后回复  
-        <text class='reply-by'>{{item.last_reply_by}}</text>
-      </view>
-    </view>
-  </block>
-</view>
+</block>
+

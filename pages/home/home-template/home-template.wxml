@@ -1,0 +1,21 @@
+<template name="home-template">
+    <view class='avatar'>
+        <image src="{{member.avatar_normal}}"></image>
+    </view>
+    <view class='middle'  catchtap="onHometap" data-hotId="{{id}}" data-topicId="{{member.id}}">
+        <view class='fade'>
+            <text class='node'>{{node.title}}</text>
+            •    
+            <text class='user-name'>{{member.username}}</text>
+        </view>
+        <view class='info-title'>{{title}}</view>
+        <view class='reply'>
+            <text class='ptime'>{{last_modified}}</text>
+            •    最后回复  
+            <text class='reply-by'>{{last_reply_by}}</text>
+        </view>
+    </view>
+    <view class='reply-num'>
+        <view class='num'>{{replies}}</view>
+    </view>
+</template>

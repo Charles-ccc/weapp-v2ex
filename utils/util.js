@@ -16,39 +16,34 @@ function http(url, callBack) {
   })
 }
 
-function formatMsgTime(timespan) {
+function formatMsgTime(date) {
+  //获取js 时间戳
+  var time = new Date().getTime();
+  //去掉 js 时间戳后三位，与php 时间戳保持一致
+  time = parseInt((time - date * 1000) / 1000);
 
-  var dateTime = new Date(timespan);
-
-  var year = dateTime.getFullYear();
-  var month = dateTime.getMonth() + 1;
-  var day = dateTime.getDate();
-  var hour = dateTime.getHours();
-  var minute = dateTime.getMinutes();
-  var second = dateTime.getSeconds();
-  var now = new Date();
-  var now_new = Date.parse(now.toDateString()); //typescript转换写法
-
-  var milliseconds = 0;
-  var timeSpanStr;
-
-  milliseconds = now_new - timespan;
-
-  if (milliseconds <= 1000 * 60 * 1) {
-    timeSpanStr = '刚刚';
-  } else if (1000 * 60 * 1 < milliseconds && milliseconds <= 1000 * 60 * 60) {
-    timeSpanStr = Math.round((milliseconds / (1000 * 60))) + '分钟前';
-  } else if (1000 * 60 * 60 * 1 < milliseconds && milliseconds <= 1000 * 60 * 60 * 24) {
-    timeSpanStr = Math.round(milliseconds / (1000 * 60 * 60)) + '小时前';
-  } else if (1000 * 60 * 60 * 24 < milliseconds && milliseconds <= 1000 * 60 * 60 * 24 * 15) {
-    timeSpanStr = Math.round(milliseconds / (1000 * 60 * 60 * 24)) + '天前';
-  } else if (milliseconds > 1000 * 60 * 60 * 24 * 15 && year == now.getFullYear()) {
-    timeSpanStr = month + '-' + day + ' ' + hour + ':' + minute;
+  //存储转换值 
+  var s;
+  if (time < 60 * 10) { //十分钟内
+    return '刚刚';
+  } else if ((time < 60 * 60) && (time >= 60 * 10)) {
+    //超过十分钟少于1小时
+    s = Math.floor(time / 60);
+    return s + "分钟前";
+  } else if ((time < 60 * 60 * 24) && (time >= 60 * 60)) {
+    //超过1小时少于24小时
+    s = Math.floor(time / 60 / 60);
+    return s + "小时前";
+  } else if ((time < 60 * 60 * 24 * 3) && (time >= 60 * 60 * 24)) {
+    //超过1天少于3天内
+    s = Math.floor(time / 60 / 60 / 24);
+    return s + "天前";
   } else {
-    timeSpanStr = year + '-' + month + '-' + day + ' ' + hour + ':' + minute;
+    //超过3天
+    var date = new Date(parseInt(date) * 1000);
+    return date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate();
   }
-  return timeSpanStr;
-};
+}
 
 module.exports = {
   http: http,

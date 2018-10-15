@@ -1,15 +1,10 @@
 /* pages/home/home.wxss */
+@import "home-template/home-template.wxss";
 .home-container{
-  width: 100%;
-  box-sizing: border-box;
-}
-.avatar{
-  width: 48rpx;
-  height: 48rpx;
-}
-.avatar image {
-  width: 48rpx;
-  height: 48rpx;
-  border-radius: 4rpx;
-  display: block;
+    width: 100%;
+    box-sizing: border-box;
+    display:  flex;
+    padding: 10rpx;
+    text-align: left;
+    border-bottom: 1px solid #e2e2e2;
 }

@@ -1,11 +1,31 @@
 {
-  "pages":[
-    "pages/home/home"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#334",
-    "navigationBarTitleText": "V2EX",
-    "navigationBarTextStyle":"#fff"
-  }
+    "pages": [
+        "pages/home/home",
+        "pages/latest/latest",
+        "pages/home/home-detail/home-detail"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#334",
+        "navigationBarTitleText": "V2EX",
+        "navigationBarTextStyle": "#fff"
+    },
+    "tabBar": {
+        "backgroundColor": "#334",
+        "color": "#fff",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "鲜语",
+                "selectedIconPath": "images/ciwei.png",
+                "iconPath": "images/ciwei_us.png"
+            },
+            {
+                "pagePath": "pages/latest/latest",
+                "text": "热议",
+                "selectedIconPath": "images/wenz.png",
+                "iconPath": "images/wenz_us.png"
+            }
+        ]
+    }
 }
