@@ -1,4 +1,4 @@
-/* pages/home/home.wxss */
+
 @import "home-template/home-template.wxss";
 .home-container{
     width: 100%;

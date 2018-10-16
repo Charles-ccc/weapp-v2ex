@@ -1,0 +1,19 @@
+<import src="../../../wxParse/wxParse.wxml"/>
+
+<template name="reply-template">
+    <view class='replay-container'>
+        <view class='avatar-left'>
+            <image src="{{member.avatar_normal}}"></image>
+        </view>
+        <view class='middle'>
+            <view class='fade'>
+                <text class='user-name'>{{member.username}}</text>
+                <text class='ptime'>{{last_modified}}</text>
+            </view>
+            <view class='reply-content'>
+                <!-- <template is="wxParse" data="{{wxParseData:reply-content.nodes}}"/> -->
+                {{content}}
+            </view>
+        </view>
+    </view>
+</template>

@@ -16,6 +16,7 @@ function http(url, callBack) {
   })
 }
 
+// 时间戳转多少分钟 小时前
 function formatMsgTime(date) {
   //获取js 时间戳
   var time = new Date().getTime();
@@ -45,7 +46,22 @@ function formatMsgTime(date) {
   }
 }
 
+// 时间戳转时间格式
+function formatUnixtimestamp(unixtimestamp) {
+    var unixtimestamp = new Date(unixtimestamp * 1000);
+    var year = 1900 + unixtimestamp.getYear();
+    var month = "0" + (unixtimestamp.getMonth() + 1);
+    var date = "0" + unixtimestamp.getDate();
+    var hour = "0" + unixtimestamp.getHours();
+    var minute = "0" + unixtimestamp.getMinutes();
+    var second = "0" + unixtimestamp.getSeconds();
+    return year + "-" + month.substring(month.length - 2, month.length) + "-" + date.substring(date.length - 2, date.length) +
+        " " + hour.substring(hour.length - 2, hour.length) + ":" +
+        minute.substring(minute.length - 2, minute.length) + ":" +
+        second.substring(second.length - 2, second.length);
+}
 module.exports = {
   http: http,
-  formatMsgTime: formatMsgTime
+  formatMsgTime: formatMsgTime,
+  formatUnixtimestamp: formatUnixtimestamp
 }

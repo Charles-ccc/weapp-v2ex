@@ -1,0 +1,50 @@
+.replay-container{
+    width: 100%;
+    box-sizing: border-box;
+    display:  flex;
+    padding: 10rpx;
+    text-align: left;
+    border-bottom: 1px solid #e2e2e2;
+}
+.avatar-left{
+    height: 48rpx;
+    flex: 0 0 48rpx;
+    margin-right: 20rpx;
+}
+.avatar-left image {
+    width: 48rpx;
+    height: 48rpx;
+    border-radius: 4rpx;
+    display: block;
+}
+.middle{
+    flex: 1 1 auto;
+}
+.fade{
+    height: 40rpx;
+    line-height: 40rpx;
+}
+.user-name{
+    display: block;
+    color: gray;
+    font-weight: bold;
+    font-size: 28rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    float: left;
+    margin-right: 20rpx;
+}
+.ptime{
+    display: block;
+    font-size: 24rpx;
+    color: #ccc;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+.reply-content{
+    font-size: 28rpx;
+    color: #141516;
+    margin-top: 10rpx;
+    word-break: break-all;
+    word-wrap: break-word;
+}

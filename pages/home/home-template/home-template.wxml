@@ -9,7 +9,7 @@
             <text class='user-name'>{{member.username}}</text>
         </view>
         <view class='info-title'>{{title}}</view>
-        <view class='reply'>
+        <view class='reply' wx:if="{{last_reply_by}}">
             <text class='ptime'>{{last_modified}}</text>
             •    最后回复  
             <text class='reply-by'>{{last_reply_by}}</text>

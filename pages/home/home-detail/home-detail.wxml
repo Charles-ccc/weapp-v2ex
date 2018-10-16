@@ -1,2 +1,32 @@
-<!--pages/home/home-detail/home-detail.wxml-->
-<text>pages/home/home-detail/home-detail.wxml</text>
+<import src="../../../wxParse/wxParse.wxml"/>
+<import src="../reply-template/reply-template.wxml" />
+
+<view class='container'>
+    <view wx:for="{{topicData}}" wx:for-item="item" wx:key="unique" class='top'>
+        <view class='top-info'>
+            <view class='avatar'>
+                <image src="{{item.member.avatar_large}}"></image>
+            </view>
+            <view class='topic'>v2ex > {{item.node.title}}</view>
+            <view class='title'>{{item.title}}</view>
+            <view class='created-info'>
+                By  
+                <text class='created-by'>{{item.member.username}}</text>
+                at    {{item.created}}
+            </view>
+            <view class='content'>
+                <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+            </view>
+        </view>
+        <view class='sep10'></view>
+        <view class='reply-info'>
+            <text class='reply-num'>{{item.replies}} 回复 </text>
+            <text class="snow"> | </text>
+            <text class='reply-time'> 直到 {{item.last_touched}}</text>
+        </view>
+        <block  wx:for='{{replyData}}' wx:for-item="item" wx:key="unique">
+            <template is="reply-template" data="{{...item}}"></template>
+        </block>
+    </view>
+</view>
+
