@@ -28,8 +28,8 @@ Page({
         console.log(replyData)
         for (let i = 0; i < replyData.length; i++) {
             replyData[i].last_modified = util.formatMsgTime(replyData[i].last_modified)
-            let content = replyData[i].content_rendered
-            WxParse.wxParse('reply-content', 'html', content, this, 0);
+            // let rcontent = replyData[i].content_rendered
+            // WxParse.wxParse('rcontent', 'html', rcontent, this, 0);
         }
         this.setData({
             replyData: replyData

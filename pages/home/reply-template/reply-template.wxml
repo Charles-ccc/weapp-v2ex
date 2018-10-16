@@ -11,7 +11,7 @@
                 <text class='ptime'>{{last_modified}}</text>
             </view>
             <view class='reply-content'>
-                <!-- <template is="wxParse" data="{{wxParseData:reply-content.nodes}}"/> -->
+                <!-- <template is="wxParse" data="{{wxParseData:rcontent.nodes}}"/> -->
                 {{content}}
             </view>
         </view>
