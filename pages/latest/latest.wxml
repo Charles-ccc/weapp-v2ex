@@ -1,2 +1,6 @@
-<!--pages/latest/latest.wxml-->
-<text>pages/latest/latest.wxml</text>
+<import src="../home/home-template/home-template.wxml" />
+<block  wx:for='{{hotData}}' wx:for-item="item" wx:key="unique">
+    <view class='home-container'>
+        <template is="home-template" data="{{...item}}"></template>
+    </view>
+</block>

@@ -5,8 +5,8 @@ Page({
         
     },
     onLoad: function (options) {
-        // let hotUrl = 'https://www.v2ex.com/api/topics/hot.json'
-        let hotUrl = 'https://www.v2ex.com/api/topics/latest.json'
+        let hotUrl = 'https://www.v2ex.com/api/topics/hot.json'
+        // let hotUrl = 'https://www.v2ex.com/api/topics/latest.json'
         util.http(hotUrl, this.processHotData)
     },
     processHotData(hotData) {

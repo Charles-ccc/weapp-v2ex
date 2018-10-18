@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/nodes/nodes",
         "pages/home/home",
         "pages/latest/latest",
         "pages/home/home-detail/home-detail"
@@ -16,15 +17,21 @@
         "list": [
             {
                 "pagePath": "pages/home/home",
-                "text": "鲜语",
-                "selectedIconPath": "images/ciwei.png",
-                "iconPath": "images/ciwei_us.png"
+                "text": "热议",
+                "selectedIconPath": "images/niuniu.png",
+                "iconPath": "images/uniuniu.png"
             },
             {
                 "pagePath": "pages/latest/latest",
-                "text": "热议",
-                "selectedIconPath": "images/wenz.png",
-                "iconPath": "images/wenz_us.png"
+                "text": "新鲜",
+                "selectedIconPath": "images/maomao.png",
+                "iconPath": "images/umaomao.png"
+            },
+            {
+                "pagePath": "pages/nodes/nodes",
+                "text": "发现",
+                "selectedIconPath": "images/zhuzhu.png",
+                "iconPath": "images/uzhuzhu.png"
             }
         ]
     }

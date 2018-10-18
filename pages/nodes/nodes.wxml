@@ -1,0 +1,13 @@
+<import src="../home/home-template/home-template.wxml" />
+<view class='cell'>
+    <view class="{{select == 0 ? 'selsetedTab' : 'tab'}}" catchtap='onNodeTap' data-tab='tech' id='0'>技术</view>
+    <view class="{{select == 1 ? 'selsetedTab' : 'tab'}}" catchtap='onNodeTap' data-tab='creative' id='1'>创意</view>
+    <view class="{{select == 2 ? 'selsetedTab' : 'tab'}}" catchtap='onNodeTap' data-tab='play' id='2'>好玩</view>
+    <view class="{{select == 3 ? 'selsetedTab' : 'tab'}}" catchtap='onNodeTap' data-tab='apple' id='3'>Apple</view>
+    <view class="{{select == 4 ? 'selsetedTab' : 'tab'}}" catchtap='onNodeTap' data-tab='jobs' id='4'>酷工作</view>
+    <view class="{{select == 5 ? 'selsetedTab' : 'tab'}}" catchtap='onNodeTap' data-tab='deals' id='5'>交易</view>
+    <view class="{{select == 6 ? 'selsetedTab' : 'tab'}}" catchtap='onNodeTap' data-tab='city' id='6'>城市</view>
+    <view class="{{select == 7 ? 'selsetedTab' : 'tab'}}" catchtap='onNodeTap' data-tab='qna' id='7'>问与答</view>
+    <view class="{{select == 8 ? 'selsetedTab' : 'tab'}}" catchtap='onNodeTap' data-tab='all' id='8'>全部</view>
+    <view class="{{select == 9 ? 'selsetedTab' : 'tab'}}" catchtap='onNodeTap' data-tab='r2' id='9'>R2</view>
+</view>

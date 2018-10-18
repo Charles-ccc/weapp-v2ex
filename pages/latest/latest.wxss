@@ -1,1 +1,9 @@
-/* pages/latest/latest.wxss */
+@import "../home/home-template/home-template.wxss";
+.home-container{
+    width: 100%;
+    box-sizing: border-box;
+    display:  flex;
+    padding: 10rpx;
+    text-align: left;
+    border-bottom: 1px solid #e2e2e2;
+}

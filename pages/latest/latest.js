@@ -1,66 +1,28 @@
-// pages/latest/latest.js
+let util = require('../../utils/util.js');
+
 Page({
+    data: {
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+    },
+    onLoad: function (options) {
+        let hotUrl = 'https://www.v2ex.com/api/topics/latest.json'
+        util.http(hotUrl, this.processHotData)
+    },
+    processHotData(hotData) {
+        for (let i = 0; i < hotData.length; i++) {
+            hotData[i].last_modified = util.formatMsgTime(hotData[i].last_modified)
+        }
+        this.setData({
+            hotData: hotData
+        })
+    },
+    onHometap(event) {
+        var hotId = event.currentTarget.dataset.hotid;
+        var topicId = event.currentTarget.dataset.topicid;
+        // event 事件对象； currentTarget 当前鼠标点击对象； dataset 所有自定义属性的集合
+        wx.navigateTo({
+            // 与原生的页面跳转一致，url后跟随参数跳转
+            url: "../home/home-detail/home-detail?hotId=" + hotId
+        })
+    }
 })
